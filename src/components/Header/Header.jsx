@@ -1,12 +1,43 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import logo from "../../../public/media/svg/logo.svg"
 
-import "./header.scss"
+import "./header.scss";
+
+
+import { Select } from 'antd';
+
 
 const Header = () => {
+    const [selectedOption, setSelectedOption] = useState({ value: 'RU', label: 'RU' });
+    const handleChange = (value) => {
+        console.log(value); // { value: "lucy", key: "lucy", label: "Lucy (101)" }
+    };
+
+    const [isScrolled, setIsScrolled] = useState(false)
+    const ref = useRef();
+    console.log(isScrolled)
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 5) {
+                setIsScrolled(true)
+            } else {
+                setIsScrolled(false)
+            }
+        });
+        return () => {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 5) {
+                    setIsScrolled(true)
+                } else {
+                    setIsScrolled(false)
+                }
+            });
+        }
+    },[])
+
     return (
-        <header className="header">
+        <header ref={ref} className={`header ${isScrolled ? 'scrolled' : 'unscrolled'}`}>
             <div className="container d-block-md">
                 <div className="header__logo">
                     <img
@@ -42,13 +73,28 @@ const Header = () => {
                     </nav>
 
                     <div className="tabheader-mobile has-form">
-                        <form action="">
-                            <select name="mobile-tabs" id="mobile-tabs">
-                                <option value="ru">RU</option>
-                                <option value="en">EN</option>
-                                <option value="ua">UA</option>
-                            </select>
-                        </form>
+                        <Select
+                            labelInValue
+                            defaultValue={selectedOption}
+                            style={{
+                                width: 120,
+                            }}
+                            onChange={setSelectedOption}
+                            options={[
+                                {
+                                    value: 'RU',
+                                    label: 'RU',
+                                },
+                                {
+                                    value: 'UA',
+                                    label: 'UA',
+                                },
+                                {
+                                    value: 'EN',
+                                    label: 'EN',
+                                },
+                            ]}
+                        />
                     </div>
                 </div>
 
@@ -105,11 +151,11 @@ const Header = () => {
                 </div>
 
 
-                <div className="burger-menu">
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                </div>
+                {/*<div className="burger-menu">*/}
+                {/*    <span className="bar"></span>*/}
+                {/*    <span className="bar"></span>*/}
+                {/*    <span className="bar"></span>*/}
+                {/*</div>*/}
             </div>
         </header>
     );
