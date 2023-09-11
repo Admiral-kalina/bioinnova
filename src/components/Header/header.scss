@@ -27,10 +27,13 @@
 .ant-select-open{
   span{
     color: var(--color-white)!important;
+    text-transform: uppercase;
   }
 }
 
-
+.rc-virtual-list-holder-inner{
+  text-transform: uppercase!important;
+}
 
 //.ant-select-arrow{
 //  display: none!important;
@@ -39,5 +42,6 @@
 span{
   font-size: 20px;
   color: var(--color-white);
+  text-transform: uppercase !important;
 }
 

@@ -1,22 +1,24 @@
 import React, {useEffect, useRef, useState} from 'react';
 
-import logo from "../../../public/media/svg/logo.svg"
-
+import logo from "../../images/logo.png"
 import "./header.scss";
 
 
-import { Select } from 'antd';
+import {Select} from 'antd';
+import {useDispatch, useSelector} from "react-redux";
+import {changeUserLanguage} from "../../features/userSlice/userSlice";
 
 
 const Header = () => {
-    const [selectedOption, setSelectedOption] = useState({ value: 'RU', label: 'RU' });
-    const handleChange = (value) => {
-        console.log(value); // { value: "lucy", key: "lucy", label: "Lucy (101)" }
-    };
+    const {language} = useSelector(store => store.user.user)
 
     const [isScrolled, setIsScrolled] = useState(false)
+    const [selectedLanguage, setSelectedLanguage] = useState({value: language, label: language});
+
+    const dispatch = useDispatch()
+
     const ref = useRef();
-    console.log(isScrolled)
+
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 5) {
@@ -34,7 +36,13 @@ const Header = () => {
                 }
             });
         }
-    },[])
+    }, [])
+
+    const handleLanguageChange = ({label, value}) => {
+        setSelectedLanguage({label, value})
+        dispatch(changeUserLanguage(label))
+    }
+
 
     return (
         <header ref={ref} className={`header ${isScrolled ? 'scrolled' : 'unscrolled'}`}>
@@ -75,23 +83,23 @@ const Header = () => {
                     <div className="tabheader-mobile has-form">
                         <Select
                             labelInValue
-                            defaultValue={selectedOption}
+                            defaultValue={selectedLanguage}
                             style={{
                                 width: 120,
                             }}
-                            onChange={setSelectedOption}
+                            onChange={handleLanguageChange}
                             options={[
                                 {
-                                    value: 'RU',
-                                    label: 'RU',
+                                    value: 'ru',
+                                    label: 'ru',
                                 },
                                 {
-                                    value: 'UA',
-                                    label: 'UA',
+                                    value: 'ua',
+                                    label: 'ua',
                                 },
                                 {
-                                    value: 'EN',
-                                    label: 'EN',
+                                    value: 'en',
+                                    label: 'en',
                                 },
                             ]}
                         />

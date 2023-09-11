@@ -1,0 +1,38 @@
+.button{
+  width: 100%;
+}
+
+.black{
+
+}
+
+.transparent{
+  color: #515151;
+  border: 3px solid #515151;
+  padding: 22px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover{
+    color: #F1B434;
+    border: 3px solid #F1B434;
+  }
+}
+
+.golden{
+    margin: 0 auto;
+    cursor: pointer;
+    background: transparent;
+    color: #F6BE2C;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 130%; /* 39px */
+    display: flex;
+    padding: 20px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    border: 2px solid #F5B335;
+
+}
+

@@ -1,0 +1,113 @@
+.root {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  grid-template-areas:  "sidebar main";
+  height: 80vh;
+
+  max-height: 780px;
+
+  .sideBar {
+
+  }
+
+  .body {
+
+  }
+
+  .gridSidebar {
+    max-height: 780px;
+    margin: 0;
+    background: transparent;
+    grid-area: sidebar;
+    display: inline-grid;
+
+
+    .block {
+      border: solid 3px #515151;
+    }
+
+    .active{
+      border-left: solid 3px #F6BE2C;
+    }
+
+    :nth-child(1) {
+
+    }
+
+    :nth-child(2) {
+      border-top: none;
+    }
+
+    :nth-child(3) {
+      border-top: none;
+    }
+
+    :nth-child(4) {
+      border-top: none;
+    }
+
+    :nth-child(5) {
+      border-top: none;
+    }
+
+    .blockElement {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+
+      img {
+        max-height: 80px;
+        max-width: 80px;
+      }
+
+      p {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .gridContent {
+    grid-area: main;
+    background: transparent;
+    max-height: 780px;
+
+    .gridCalendar {
+      overflow-y: scroll;
+      max-height: 100%;
+      border: solid 3px #515151;
+      border-left: none;
+
+      scrollbar-color: red orange;
+      scrollbar-width: thin;
+      margin: 0 25px 0 0;
+
+      &::-webkit-scrollbar {
+        flex-shrink: 0;
+        width: 34px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border: 12px solid rgba(0, 0, 0, 0);
+        background-clip: padding-box;
+        border-radius: 9999px;
+
+        background-color:  rgba(217, 217, 217, 0.30);
+
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+        margin: 50px 0 0 0;
+      }
+    }
+  }
+
+  .gridContent {
+    background: transparent;
+    display: grid;
+    height: 100%;
+    grid-gap: 10px 10px
+  }
+}

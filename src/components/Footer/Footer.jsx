@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logo from "../../../public/media/svg/Logo.svg"
+import logo from "../../images/logo.png"
 import icon5 from "../../images/icon/icon5.svg"
 import icon6 from "../../images/icon/icon6.svg"
 import icon7 from "../../images/icon/icon7.svg"
