@@ -1,0 +1,26 @@
+.root{
+max-width: 920px;
+}
+
+.program{
+  padding: 0 0 0 50px;
+  li{
+    color: var(--color-white);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 130%;
+  }
+  ol{
+    padding-top: 30px;
+  }
+  ul{
+
+    li{
+      margin: 0 0 0 8px;
+  &:before{
+    content: url("../../../images/check.svg");
+  }
+    }
+  }
+}

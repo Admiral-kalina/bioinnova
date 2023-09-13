@@ -4,7 +4,7 @@ import React from 'react';
 import * as styles from "./activities.module.scss"
 import Container from "../Container/Container";
 import MyCalendar from "../MyCalendar/MyCalendar";
-import {WebinarsList} from "../Webinars/WebinarsList";
+import {WebinarsList} from "../Webinars/WebinarList/WebinarsList";
 import IndividualForm from "../UI/IndividualForm/IndividualForm";
 
 const mockWebinars = [

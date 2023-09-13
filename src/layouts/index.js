@@ -22,7 +22,7 @@ export const Layout = ({children}) => {
     }else {
         return (
             <>
-                <div className="page main-page">
+
                     <Provider store={store}>
                         <BrowserRouter>
                             <ToastContainer  autoClose={2000} />
@@ -30,7 +30,7 @@ export const Layout = ({children}) => {
                         </BrowserRouter>
                     </Provider>
                     <Script src="../../public/main.js" />
-                </div>
+
             </>
         )
     }

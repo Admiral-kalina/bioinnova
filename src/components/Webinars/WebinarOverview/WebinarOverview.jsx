@@ -1,32 +1,21 @@
 import React, {useEffect, useState} from "react";
 
 // components
-import Container from "../Container/Container";
+import Container from "../../Container/Container";
 
 // styles
 import * as styles from "./webinarOverview.module.scss"
 
-import ReactMarkdown from 'react-markdown'
-import ReactDom from 'react-dom'
-import remarkGfm from 'remark-gfm'
-import MyButton from "../UI/MyButton/MyButton";
 
-import logo from "../../images/webinar/logo.png"
-import IndividualForm from "../UI/IndividualForm/IndividualForm";
+import MyButton from "../../UI/MyButton/MyButton";
+
+import logo from "../../../images/webinar/logo.png"
+import IndividualForm from "../../UI/IndividualForm/IndividualForm";
+import WebinarDescription from "../WebinarDescription/WebinarDescription";
 
 
 export const WebinarOverview = ({context}) => {
-    // const [a, setA] = useState('');
-    // const get = async () => {
-    //     return  await axios.get('http://localhost:1337/api/courses/1')
-    // }
-    // console.log(context)
-    // useEffect(async () => {
-    //    const a = await get();
-    //     let b
-    //         = a.data.data.attributes.format
-    //     setA(b)
-    // },[])
+
     console.log(context)
     return (
         <div>
@@ -36,7 +25,7 @@ export const WebinarOverview = ({context}) => {
                         <img className={styles.image} src={logo} alt=""/>
                         <div className={styles.description}>
                             <p className={styles.title}>Вебинар №1</p>
-                            <p className={styles.name}>Аспекты фармаконадзора</p>
+                            <p className={`${styles.name} text60`}>Аспекты фармаконадзора</p>
                             <p className={styles.date}><span>Дата:</span> 10.11.2023</p>
                             <p className={styles.teacher}><span>Тренер:</span> Андрей Шимко, эксперт GMP/GDP</p>
                             <p className={styles.program}><span>Программа:</span> Фармаконадзор</p>
@@ -57,7 +46,23 @@ export const WebinarOverview = ({context}) => {
                         </div>
                     </div>
                 </div>
+                <div className={styles.descriptionBlock}>
+                    <div className={styles.row}>
+                        <p className={`${styles.title} text60`}>Описание</p>
+                        <div className={styles.content}>
+                            <WebinarDescription/>
+                        </div>
+
+                    </div>
+                    <div className={styles.row}>
+                        <p className={`${styles.title} text60`}>Программа</p>
+                        <div className={styles.content}>
+                            <WebinarDescription type="program"/>
+                        </div>
+                    </div>
+                </div>
             </Container>
+
             <div >
                 <IndividualForm type='individual'/>
             </div>

@@ -1,4 +1,4 @@
-import * as styles from "./webinars.module.scss";
+import * as styles from "../webinars.module.scss";
 import {Link} from "gatsby";
 import React from "react";
 

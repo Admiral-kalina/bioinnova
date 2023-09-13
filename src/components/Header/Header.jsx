@@ -9,7 +9,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {changeUserLanguage} from "../../features/userSlice/userSlice";
 
 
-const Header = () => {
+const Header = ({type}) => {
     const {language} = useSelector(store => store.user.user)
 
     const [isScrolled, setIsScrolled] = useState(false)
@@ -43,9 +43,14 @@ const Header = () => {
         dispatch(changeUserLanguage(label))
     }
 
-
+    console.log('loh',type)
     return (
-        <header ref={ref} className={`header ${isScrolled ? 'scrolled' : 'unscrolled'}`}>
+        <header ref={ref}
+                className={
+                    `header 
+            ${isScrolled ? 'scrolled' : 'unscrolled'}
+            ${type === 'full' ? 'about-page' : ''}
+            `}>
             <div className="container d-block-md">
                 <div className="header__logo">
                     <img

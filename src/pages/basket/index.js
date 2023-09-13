@@ -3,14 +3,14 @@ import React from 'react';
 // components
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import Contacts from "../../components/Contacts/Contacts";
-import Activities from "../../components/Activities/Activities";
+import Basket from "../../components/Basket/Basket";
+
 
 const Index = () => {
     return (
         <div>
             <Header/>
-            <Activities/>
+            <Basket/>
             <Footer/>
         </div>
     );

@@ -44,10 +44,10 @@
     max-width: 580px;
     max-height: 630px;
     justify-self: flex-end;
-    @media  screen and (max-width: 1200px){
+    @media screen and (max-width: 1200px) {
       width: 100%;
     }
-    @media  screen and (max-width: 768px){
+    @media screen and (max-width: 768px) {
       margin-top: 40px;
       justify-self: center;
     }
@@ -60,7 +60,7 @@
     span {
       font-weight: 700;
       font-size: 24px;
-      text-transform: none!important;
+      text-transform: none !important;
     }
 
 
@@ -83,9 +83,8 @@
       }
     }
 
-    .name{
+    .name {
       padding: 16px 0 40px;
-      font-size: 60px;
       font-weight: 600;
       line-height: 110%; /* 66px */
       max-width: 520px;
@@ -97,7 +96,7 @@
       font-weight: 300;
 
       &:before {
-        content: url("../../images/calendar.svg");
+        content: url("../../../images/calendar.svg");
       }
     }
 
@@ -106,32 +105,33 @@
       max-width: 310px;
 
       &:before {
-        content: url("../../images/user.svg");
+        content: url("../../../images/user.svg");
       }
     }
 
     .program {
       &:before {
-        content: url("../../images/book.svg");
+        content: url("../../../images/book.svg");
       }
     }
 
     .format {
       &:before {
-        content: url("../../images/clock.svg");
+        content: url("../../../images/clock.svg");
       }
     }
 
     .exactTime {
       &:before {
-        content: url("../../images/clock.svg");
+        content: url("../../../images/clock.svg");
       }
     }
-    @media  screen and (max-width: 1500px){
+
+    @media screen and (max-width: 1500px) {
       margin: 0;
     }
 
-    @media  screen and (max-width: 1200px){
+    @media screen and (max-width: 1200px) {
       .title {
         font-size: 22px;
       }
@@ -141,7 +141,7 @@
         padding: 16px 0 0 0;
         font-size: 44px;
       }
-      span{
+      span {
         font-size: 22px;
       }
       .date, .teacher, .program, .format, .exactTime {
@@ -150,37 +150,39 @@
         font-size: 22px;
       }
     }
-    @media  screen and (max-width: 768px){
+    @media screen and (max-width: 768px) {
       .title {
         font-size: 20px;
       }
       .title {
         font-size: 40px;
       }
-      span{
+      span {
         font-size: 20px;
       }
       .date, .teacher, .program, .format, .exactTime {
         margin: 16px 0 0 20px;
         padding: 0 0 0 20px;
         font-size: 20px;
+
         &:before {
           top: 2px;
         }
       }
     }
-    @media  screen and (max-width: 450px){
+    @media screen and (max-width: 450px) {
 
       .title {
         font-size: 36px;
       }
-      span{
+      span {
         font-size: 20px;
       }
       .date, .teacher, .program, .format, .exactTime {
         margin: 16px 0 0 20px;
         padding: 0 0 0 20px;
         font-size: 18px;
+
         &:before {
           top: 2px;
         }
@@ -197,23 +199,23 @@
       margin: 50px 0 0 0;
     }
     @media screen and (max-width: 1500px) {
-      margin: 40px 0 0  ;
+      margin: 40px 0 0;
       max-width: 370px;
-      button{
+      button {
         font-size: 26px;
       }
     }
-    @media  screen and (max-width: 768px){
+    @media screen and (max-width: 768px) {
       justify-self: center;
-      button{
+      button {
         height: 60px;
         font-size: 22px;
       }
     }
-    @media  screen and (max-width: 450px){
+    @media screen and (max-width: 450px) {
       max-width: 450px;
       width: 100%;
-      button{
+      button {
         padding: 30px;
         font-size: 20px;
       }
@@ -279,10 +281,10 @@
       }
 
     }
-    @media  screen and (max-width: 768px){
+    @media screen and (max-width: 768px) {
       justify-self: center;
     }
-    @media  screen and (max-width: 450px){
+    @media screen and (max-width: 450px) {
       max-width: 450px;
       width: 100%;
       p {
@@ -292,4 +294,21 @@
       }
     }
   }
+}
+
+
+.descriptionBlock {
+  padding-top: 180px;
+  .row {
+    display: grid;
+    grid-template-columns: minmax(380px, 380px) minmax(1fr, 920px);
+    grid-template-areas: "text content";
+  }
+  .title{
+    grid-area: text;
+  }
+  .content{
+    grid-area: content;
+  }
+
 }

@@ -2,10 +2,8 @@ import React from 'react';
 import Container from "../Container/Container";
 
 import * as styles from "./webinars.module.scss"
-import arrowUpRight from "../../images/arrowUpRightSm.svg"
-import {Link} from "gatsby";
-import {WebinarOverview} from "./WebinarOverview";
-import {WebinarsList} from "./WebinarsList";
+import {WebinarOverview} from "./WebinarOverview/WebinarOverview";
+import {WebinarsList} from "./WebinarList/WebinarsList";
 
 const mockWebinars = [
     {
