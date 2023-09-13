@@ -83,14 +83,21 @@ const mockWebinars = [
 ]
 
 
-
-
 const Webinars = ({context}) => {
     return (
         <div>
             {context.key === 'webinarElement'
                 ? <WebinarOverview context={context}/>
-                : <WebinarsList webinars={mockWebinars}/>
+                :
+                <Container>
+                    <div className={styles.root}>
+                        <p className={styles.back}>Услуги</p>
+                        <p className={styles.title}>Лекции и вебинары</p>
+                        <div className={styles.row}>
+                            <WebinarsList webinars={mockWebinars}/>
+                        </div>
+                    </div>
+                </Container>
             }
         </div>
     );
