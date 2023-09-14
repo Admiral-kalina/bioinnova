@@ -104,7 +104,7 @@ const {t} = useTranslation()
 
             <div className="container d-block-md">
               <section className="experience__wrapper">
-                <h2 className="experience__title">Доверьтесь опыту и качеству</h2>
+                <h2 className="experience__title">О нас</h2>
                 <div className="experience__description">
                   <p className="experience__text">
                     Наша миссия заключается в том, чтобы помочь специалистам в фармацевтической и смежной ей отраслях принимать более эффективные решения в критических бизнес-процессах
