@@ -50,11 +50,14 @@ export const WebinarOverview = ({context}) => {
                     <div className={styles.row}>
                         <p className={`${styles.title} text60`}>Описание</p>
                         <div className={styles.content}>
+                            <p className={styles.contentTitle}>
+                                Вебинар "Аспекты Фармаконадзора" представляет собой обзор ключевых аспектов и основных понятий в области фармаконадзора. Она может быть полезной для студентов медицинских, фармацевтических, исследовательских и связанных с здравоохранением направлений.
+                            </p>
                             <WebinarDescription/>
                         </div>
 
                     </div>
-                    <div className={styles.row}>
+                    <div className={`${styles.row} ${styles.rowProgram}`}>
                         <p className={`${styles.title} text60`}>Программа</p>
                         <div className={styles.content}>
                             <WebinarDescription type="program"/>

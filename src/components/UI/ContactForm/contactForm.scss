@@ -25,13 +25,20 @@
       line-height: normal;
       border: 1px solid #F1F0E7;
       backdrop-filter: blur(3px);
-
-      &::placeholder {
-        color: rgba(241, 240, 231, 0.40);
+      background-color: #151515;
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active{
+        -webkit-box-shadow: 0 0 0 45px #151515 inset !important;
+        -webkit-text-fill-color: #fff;
       }
-      &:focus{
-        border: 2px solid #F5B335;
-      }
+      //&::placeholder {
+      //  color: rgba(241, 240, 231, 0.40);
+      //}
+      //&:focus{
+      //  border: 2px solid #F5B335;
+      //}
     }
 
     button {
@@ -71,8 +78,6 @@
         height: 60px;
         font-size: 18px;
       }
-
-
     }
   }
 

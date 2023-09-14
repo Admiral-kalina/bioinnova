@@ -1,5 +1,8 @@
 .ant-select{
   width: 75px!important;
+  @media screen and (max-width: 991px){
+    display: none;
+  }
 }
 .ant-select-selector{
   position: relative;

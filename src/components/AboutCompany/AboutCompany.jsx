@@ -10,8 +10,11 @@ import aboutBgMiddle from "../../images/about/about-bg-middle.png";
 import aboutBgMiddleMobile from "../../images/about/about-bg-middle-mobile.png";
 import aboutBgMiddleLines from "../../images/about/about-bg-middle-lines.png";
 import aboutBgMiddleLinesMobile from "../../images/about/about-bg-middle-lines-mobile.png";
-
-import * as styles from "./aboutCompany.scss"
+import checkIcon from "../../images/check.svg"
+import icon10 from "../../images/icon/icon10.svg";
+import icon11 from "../../images/icon/icon11.svg";
+import  "./aboutCompany.scss"
+import {Link} from "gatsby";
 
 const AboutCompany = () => {
     return (
@@ -25,13 +28,11 @@ const AboutCompany = () => {
 
                         <section className="our-goal-block__description">
                             <p>
-                                Это обеспечение потребностей рынка лучшими специалистами
-                                в своей области
+                                Мы обучаем культуре безопасного применения лекарственных средств путем универсального подхода для специалистов разного уровня квалификации
                             </p>
 
                             <p>
-                                Мы обучаем культуре безопасного применения лекарственных средств путем универсального
-                                подхода для специалистов разного уровня квалификации
+                                Присоединяйтесь к нам и двигайтесь вперед к профессиональному росту и совершенствованию.
                             </p>
                         </section>
                     </div>
@@ -90,7 +91,8 @@ const AboutCompany = () => {
                         </ul>
                     </div>
                     <section className="main-areas__mission">
-                        <i className="icon-temples"></i>
+                        {/*<i className="icon-temples"></i>*/}
+                        <img src={icon11} alt="icon"/>
                         <div className="main-areas__mission--items">
                             <h2 className="main-areas__title">Миссия</h2>
                             <p>
@@ -112,15 +114,15 @@ const AboutCompany = () => {
 
                         <ul className="medical-affairs__list">
                             <li>
-                                <i className="icon-check-square"></i>
+                                <img src={checkIcon} alt="checkIcon"/>
                                 Изучаем проблемы рынка и определяем их актуальность
                             </li>
                             <li>
-                                <i className="icon-check-square"></i>
+                                <img src={checkIcon} alt="checkIcon"/>
                                 Собираем лучших экспертов в тематике выявленной проблемы
                             </li>
                             <li>
-                                <i className="icon-check-square"></i>
+                                <img src={checkIcon} alt="checkIcon"/>
                                 Организовываем и реализуем курсы обучения по критически важным для бизнеса компетенциям,
                                 характерным для фармацевтической индустрии и смежных отраслей.
                             </li>
@@ -183,7 +185,7 @@ const AboutCompany = () => {
                         <div className="description__container">
                             <div className="description__items">
                                 <div className="description__item">
-                                    <i className="icon-temples"></i>
+                                    <img src={icon10} alt="icon"/>
                                     <p>
                                         Все наши курсы обучения
                                         и образовательные программы разработаны и преподаются эксклюзивной сетью
@@ -192,7 +194,8 @@ const AboutCompany = () => {
                                     </p>
                                 </div>
                                 <div className="description__item">
-                                    <i className="icon-temples"></i>
+                                    <img src={icon10} alt="icon"/>
+
                                     <p>
                                         Практикуемая нами система обучения позволяет как освоить профессию с чистого
                                         листа, так
@@ -201,7 +204,8 @@ const AboutCompany = () => {
                                     </p>
                                 </div>
                                 <div className="description__item">
-                                    <i className="icon-temples"></i>
+                                    <img src={icon10} alt="icon"/>
+
                                     <p>
                                         Мы умеем делать сложную научную и клиническую информацию более доступной для
                                         тех, кто не так хорошо знаком с этой областью.
@@ -211,7 +215,7 @@ const AboutCompany = () => {
                         </div>
 
 
-                        <a href="#" className="btn btn-yellow">Записаться</a>
+                        <Link to='/contacts' className="btn btn-yellow">Записаться</Link>
                     </div>
                 </div>
             </article>

@@ -93,6 +93,7 @@
     font-weight: 300;
     line-height: 1.2;
 
+
     @include media-breakpoint-up(lg) {
       max-width: 575px;
       align-self: flex-start;
@@ -404,19 +405,20 @@
       display: flex;
     }
 
-    i {
+    img {
       display: none;
 
       @include media-breakpoint-up(xl) {
         width: 45%;
         display: block;
-        font-size: 80px;
+        height: 80px;
+
       }
 
       @include media-breakpoint-up(xxl) {
         width: 42%;
         display: block;
-        font-size: 120px;
+        height: 120px;
       }
     }
 
@@ -517,22 +519,24 @@
 
     li {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       padding-bottom: 24px;
-      gap: 30px;
+      gap: 14px;
       border-bottom: $border-gold;
       color: var(--color-white);
 
-      i {
-        font-size: 30px;
+      img {
+        width: 30px;
+        height: 30px;
         color: var(--color-yellow);
       }
 
       @include media-breakpoint-up(lg) {
         font-size: 1.25 rem;
 
-        i {
-          font-size: 40px;
+        img {
+          height: 30px;
+          width: 30px;
           color: var(--color-yellow);
         }
       }
@@ -677,6 +681,7 @@
 // ---
 // Description Block
 .description {
+
   padding-top: 80px;
   padding-bottom: 80px;
 
@@ -701,6 +706,21 @@
   }
 
   &__container {
+    &::-webkit-scrollbar {
+      flex-shrink: 0;
+      width: 34px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-clip: padding-box;
+      border-radius: 9999px;
+      background-color:  rgba(217, 217, 217, 0.30);
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      margin: 50px 0 0 0;
+    }
     position: relative;
     width: 100%;
 
@@ -763,17 +783,20 @@
       }
     }
 
-    i {
-      font-size: 80px;
+    img {
+      width: 80px;
+      height: 80px;
       color: var(--color-golden-yellow);
       opacity: 0.25;
 
       @include media-breakpoint-up(lg) {
-        font-size: 100px;
+        width: 100px;
+        height: 100px;
       }
 
       @include media-breakpoint-up(xxl) {
-        font-size: 120px;
+        width: 120px;
+        height: 120px;
       }
     }
 

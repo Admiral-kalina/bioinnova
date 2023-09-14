@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 // import emailjs from '@emailjs/browser'
 // styles
 import * as styles from "./contacts.module.scss";
@@ -7,10 +7,15 @@ import PhoneInput from "react-phone-number-input";
 import {Field, Formik} from "formik";
 import MyButton from "../UI/MyButton/MyButton";
 import ContactForm from "../UI/ContactForm/ContactForm";
+import {scrollToTop} from "../../helpers/scrollToTop";
 
 
 
 const Contacts = () => {
+
+    useEffect(() => {
+        scrollToTop()
+    },)
 
     return (
     <div className={styles.root}>
@@ -27,7 +32,7 @@ const Contacts = () => {
                     </div>
                     <div className={styles.bottomInfo}>
                         <a href="/">email: info@bioinnova.com.ua</a>
-                        <a href="/">+380 95 382 9264 01033</a>
+                        <a href="m">+380 95 382 9264</a>
                         <p>місто Київ, ВУЛИЦЯ ТАРАСІВСЬКА, будинок 4-А, офіс 7</p>
                     </div>
                 {/*</div>*/}

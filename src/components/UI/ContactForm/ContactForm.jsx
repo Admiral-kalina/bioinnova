@@ -3,6 +3,8 @@ import * as styles from "../../Contacts/contacts.module.scss";
 import {Field, Formik} from "formik";
 import MyButton from "../MyButton/MyButton";
 import PhoneInput from "react-phone-number-input";
+import emailjs from '@emailjs/browser'
+import {toast} from "react-toastify";
 
 import "./contactForm.scss"
 
@@ -11,6 +13,8 @@ const Phone = ({field, form, ...props}) => {
         <PhoneInput
             placeholder={'Телефон'}
             value=""
+            name="phone"
+            id="phone"
             onChange={value => {
                 if (!form.touched[field.name]) form.setFieldTouched(field.name);
                 form.setFieldValue(field.name, value);
@@ -21,10 +25,14 @@ const Phone = ({field, form, ...props}) => {
 
 const ContactForm = ({type}) => {
     const errorObj = {}
+
     const handleSend = (e, values) => {
         e.preventDefault()
-
-        // emailjs.sendForm('service_9o14oac', 'template_id', e.target,'public_key')
+        console.log('tRRIIIGEGR', e.target)
+        // emailjs.sendForm('service_unn8rcc', 'template_3s6yn4c', e.target,'aX38vukXce76LEtYE')
+        toast.success("successfully!", {
+            hideProgressBar: true,
+        });
     }
     return (
         <div className="contactForm">
@@ -75,6 +83,7 @@ const ContactForm = ({type}) => {
                                     className="text24"
                                     type="name"
                                     name="name"
+                                    id="name"
                                     placeholder={'Имя'}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
@@ -93,6 +102,7 @@ const ContactForm = ({type}) => {
                                     className="text24"
                                     type="email"
                                     name="email"
+                                    id="email"
                                     placeholder="E-mail"
                                     onChange={handleChange}
                                     onBlur={handleBlur}
@@ -105,6 +115,7 @@ const ContactForm = ({type}) => {
                                     className="text24"
                                     type="text"
                                     name="them"
+                                    id="them"
                                     placeholder="Тема вебинара или программа"
                                     onChange={handleChange}
                                     onBlur={handleBlur}

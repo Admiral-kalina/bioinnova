@@ -36,16 +36,13 @@ const IndexPage = () => {
             <div className="container d-block-md">
               <div className="presentation-block">
                 <h1 className="main-title">
-                  Преисполните <br/>
-                  свои знания
+                  Знания это  <br/>
+                  ключ к успеху
                 </h1>
 
                 <section className="presentation-block__description">
                   <p>
-                    Наши курсы предлагают не только знания, но и ключи к успеху в
-                    этой захватывающей отрасли. Пройдите обучение под руководством
-                    опытных экспертов, раскройте свой потенциал и создайте будущее
-                    здоровья вместе с нами.
+                    Мы являемся инновационной и независимой образовательной платформой, на которой можно получить инновации, знания и ответы на сложные вопросы в области фармаконадзора, GMP-сертификации, регистрации и клинического развития в фармацевтической отрасли.
                   </p>
                   <nav>
                     {/*<a href="#" className="btn btn-yellow">Записаться</a>*/}
@@ -96,7 +93,7 @@ const IndexPage = () => {
             <div className="marquee-block">
               <div className="marquee-container">
                 <div className="marquee">
-                  ГРУПОВЫЕТРЕНИНГИГРУПОВЫЕТРЕНИНГИГРУПОВЫЕТРЕНИНГИ
+                  ГРУПОВЫЕ ТРЕНИНГИ ГРУПОВЫЕ ТРЕНИНГИ ГРУПОВЫЕ ТРЕНИНГИ
                 </div>
               </div>
             </div>
@@ -106,9 +103,7 @@ const IndexPage = () => {
                 <h2 className="experience__title">Доверьтесь опыту и качеству</h2>
                 <div className="experience__description">
                   <p className="experience__text">
-                    Мы — фармацевтическая компания, которой доверяют миллионы.
-                    Доверьтесь нам и позвольте нам заботиться о вашем
-                    благополучии. Вместе мы создаем будущее здоровья и комфорта.
+                    Наша миссия заключается в том, чтобы помочь специалистам в фармацевтической и смежной ей отраслях принимать более эффективные решения в критических бизнес-процессах
                   </p>
                   <div className="line__wrapper">
                     <div className="line"></div>
@@ -116,20 +111,20 @@ const IndexPage = () => {
 
                   <div className="achievements-wrapper">
                     <div className="achievements__items">
-                      <div className="achievements__items--value">116</div>
+                      <div className="achievements__items--value">105+</div>
                       <p className="achievements__description">
-                        Выпущенных препаратов
+                        партнеров по всему миру
                       </p>
                     </div>
                     <div className="achievements__items">
-                      <div className="achievements__items--value">105</div>
+                      <div className="achievements__items--value">116+ </div>
                       <p className="achievements__description">
-                        Наших мировых партнеров
+                        выпущенных препаратов
                       </p>
                     </div>
                     <div className="achievements__items">
-                      <div className="achievements__items--value">12</div>
-                      <p>Лет на медицинском рынке</p>
+                      <div className="achievements__items--value">300+</div>
+                      <p>регистрационных процедур в год</p>
                     </div>
                   </div>
                 </div>
@@ -272,10 +267,7 @@ const IndexPage = () => {
 
                       <div className="training__subtitle">
                         <p>
-                          Откройте двери к успешной карьере в мире медицины и
-                          фармацевтики с нашими специализированными курсами.
-                          Получите уникальные знания и навыки от опытных
-                          профессионалов отрасли.
+                          Наша главная цель это обеспечение потребностей рынка лучшими специалистами в своей области. Мы делаем это, обучая специалистов инновационным концепциям, которые они могут получить только у практикующих экспертов.
                         </p>
                       </div>
                       {/*<a href="#" className="btn btn-yellow">Записаться</a>*/}
