@@ -13,7 +13,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {changeUserLanguage} from "../../features/userSlice/userSlice";
 import {Link} from "gatsby";
 import {useLocation} from "react-router-dom";
-
+import i18n from "i18next";
 
 const Header = ({type}) => {
     const {language} = useSelector(store => store.user.user)
@@ -64,6 +64,7 @@ const Header = ({type}) => {
     const handleLanguageChange = ({label, value}) => {
         setSelectedLanguage({label, value})
         dispatch(changeUserLanguage(label))
+        i18n.changeLanguage(label)
     }
 
     const handleBurgerClick = () => {

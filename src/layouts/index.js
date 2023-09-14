@@ -5,7 +5,7 @@ import {Script} from "gatsby"
 import {BrowserRouter} from "react-router-dom";
 // i18n
 
-
+import "../i18n"
 // redux
 import {Provider} from "react-redux";
 import {store} from "../app/store";
@@ -14,7 +14,7 @@ import {store} from "../app/store";
 // style
 import "../../public/css/style.scss"
 
-
+import {Trans} from "react-i18next";
 
 export const Layout = ({children}) => {
     if (typeof window !== "object"){

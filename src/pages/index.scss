@@ -35,19 +35,18 @@
     &--top {
       position: relative;
       display: block;
-      padding-top: 250px;
-      padding-bottom: 80px;
+      padding: 100px 0 50px;
+
       width: 100%;
       background-image: url('../images/bg-bottom.png');
       background-size: cover;
 
       @include media-breakpoint-up(lg) {
-        padding-top: 460px;
-        padding-bottom: 270px;
+        padding: 100px 0 50px;
       }
 
       @include media-breakpoint-up(xxl) {
-        padding-top: 540px;
+        padding: 180px 0 100px;
       }
     }
 
