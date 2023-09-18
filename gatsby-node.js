@@ -1,9 +1,18 @@
 const path = require("path");
+const axios = require("axios");
+
+const get = endpoint => axios.get(`http://localhost:1337/api/${endpoint}`);
+
+getData = async (endpoint) => {
+    const state = await get(`${endpoint}`);
+    return state.data.data;
+}
+
 
 const homeNavs = [
     {
         id: 1,
-        path: 'webinar',
+        path: 'webinars',
         isActive: false,
     }
     ,
@@ -27,28 +36,33 @@ const homeNavs = [
 ]
 
 const mockPrograms = [
-    {id:1, keyName:'program', section:'Программа',name:'фармаконадзор',date:'10.11.2023',webinarsCount:3},
-    {id:2, keyName:'program', section:'Программа',name:'фармаконадзор',date:'10.11.2023',webinarsCount:3},
-    {id:3, keyName:'program', section:'Программа',name:'фармаконадзор',date:'10.11.2023',webinarsCount:3},
-    {id:4, keyName:'program', section:'Программа',name:'фармаконадзор',date:'10.11.2023',webinarsCount:3},
-    {id:5, keyName:'program', section:'Программа',name:'фармаконадзор',date:'10.11.2023',webinarsCount:3},
-    {id:6, keyName:'program', section:'Программа',name:'фармаконадзор',date:'10.11.2023',webinarsCount:3},
-    {id:7, keyName:'program', section:'Программа',name:'фармаконадзор',date:'10.11.2023',webinarsCount:3},
-    {id:8, keyName:'program', section:'Программа',name:'фармаконадзор',date:'10.11.2023',webinarsCount:3},
+    {id:1, keyName:'program', section:'Программа',name:'фармаконадзор',start:'10.11.2023',webinarsCount:3},
+    {id:2, keyName:'program', section:'Программа',name:'фармаконадзор',start:'10.11.2023',webinarsCount:3},
+    {id:3, keyName:'program', section:'Программа',name:'фармаконадзор',start:'10.11.2023',webinarsCount:3},
+    {id:4, keyName:'program', section:'Программа',name:'фармаконадзор',start:'10.11.2023',webinarsCount:3},
+    {id:5, keyName:'program', section:'Программа',name:'фармаконадзор',start:'10.11.2023',webinarsCount:3},
+    {id:6, keyName:'program', section:'Программа',name:'фармаконадзор',start:'10.11.2023',webinarsCount:3},
+    {id:7, keyName:'program', section:'Программа',name:'фармаконадзор',start:'10.11.2023',webinarsCount:3},
+    {id:8, keyName:'program', section:'Программа',name:'фармаконадзор',start:'10.11.2023',webinarsCount:3},
 ]
 
 const mockWebinars = [
-    {id: 1, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', date: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
-    {id: 2, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', date: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
-    {id: 3, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', date: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
-    {id: 4, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', date: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
-    {id: 5, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', date: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
-    {id: 6, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', date: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
-    {id: 7, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', date: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
-    {id: 8, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', date: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
+    {id: 1, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', start: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
+    {id: 2, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', start: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
+    {id: 3, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', start: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
+    {id: 4, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', start: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
+    {id: 5, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', start: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
+    {id: 6, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', start: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
+    {id: 7, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', start: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
+    {id: 8, keyName: 'webinar', section: 'Вебинар', name: 'Аспекты Фармаконадзора', start: '10.11.2023', teacher:'рей Шимко, эксперт GMP/GDP',exactTime:'11:00 - 11:30',format:'1 день; 1,5 часа', oneParticipant:'500', fiveParticipants:'3000', tenParticipants:'8000', duration: 30},
 ]
 
 exports.createPages = async ({actions: {createPage}}) => {
+
+    const programs = await getData('courses?populate=*')
+
+    console.log('PR1',programs)
+
     createPage({
         path: `/home`,
         matchPath: "/home/:id",
@@ -69,10 +83,10 @@ exports.createPages = async ({actions: {createPage}}) => {
         context: {key:'program'}
     });
 
-    mockPrograms.map(program => {
+    programs.map(program => {
         createPage({
-            path: `services/programs/${program.keyName+program.id}`,
-            component: require.resolve('./src/pages/programs'),
+            path: `services/programs/program${program.id}`,
+            component: require.resolve('./src/pages/programs/index.js'),
             context: {key:'programElement',program}
         });
     })

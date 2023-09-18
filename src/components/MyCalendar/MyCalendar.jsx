@@ -13,6 +13,32 @@ import 'moment/locale/ru'
 
 const localizer = momentLocalizer(moment)
 
+const events = [
+    {
+        'title': 'All Day Event very long title',
+        'allDay': true,
+        'start': new Date(2023, 8, 18),
+        'end': new Date(2023, 8, 18),
+        'editionData': 'zalupa'
+    },
+    {
+        'title': 'Long Event',
+        'start': new Date(2023, 8, 20),
+        'end': new Date(2023, 8, 20),
+        'editionData': 'zalupa'
+    },
+]
+
+const CustomEvent = ({event}) => {
+    console.log("prr", event)
+    return (
+        <div className="event_element">
+
+            {event.editionData}
+            {/*{event.title}asdfasdf*/}
+        </div>
+    )
+}
 
 const MyCalendar = ({general}) => {
     moment.locale("ua");
@@ -24,10 +50,14 @@ const MyCalendar = ({general}) => {
             <div className={`calendar ${general ? 'generalCalendar' : ''}`}>
                 <Calendar
                     ref={ref}
+                    events={events}
                     localizer={localizer}
                     startAccessor="start"
                     endAccessor="end"
-                    components={{toolbar: CustomToolbar}}
+                    components={{
+                        event: CustomEvent,
+                        toolbar: CustomToolbar,
+                    }}
                 />
             </div>
         </div>

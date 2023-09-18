@@ -15,8 +15,10 @@ import {store} from "../app/store";
 import "../../public/css/style.scss"
 
 import {Trans} from "react-i18next";
+import MiddleLayout from "./middleLayout";
 
 export const Layout = ({children}) => {
+
     if (typeof window !== "object"){
         return
     }else {
@@ -26,7 +28,9 @@ export const Layout = ({children}) => {
                     <Provider store={store}>
                         <BrowserRouter>
                             <ToastContainer  autoClose={2000} />
-                            {children}
+                            <MiddleLayout>
+                                {children}
+                            </MiddleLayout>
                         </BrowserRouter>
                     </Provider>
                     <Script src="../../public/main.js" />

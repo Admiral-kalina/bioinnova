@@ -3,10 +3,9 @@ import {Link} from "gatsby";
 import React from "react";
 
 export const WebinarsList = ({webinars}) => {
+    console.log('WEBINAR',webinars)
     return (
         <>
-
-
             {webinars.map(webinar =>
                 <div className={styles.column}>
                     <p className={styles.section}>{webinar.section} №{webinar.id}</p>

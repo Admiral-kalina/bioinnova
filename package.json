@@ -25,6 +25,7 @@
     "body-scroll-lock": "^4.0.0-beta.0",
     "clsx": "^2.0.0",
     "custom-select": "^1.1.15",
+    "dotenv": "^16.3.1",
     "formik": "^2.4.3",
     "gatsby": "^5.12.4",
     "gatsby-omni-font-loader": "^2.0.2",

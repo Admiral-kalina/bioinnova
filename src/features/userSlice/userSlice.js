@@ -6,33 +6,43 @@ import {strapiApi} from "../../api";
 const languageFromStorage = typeof window !== 'undefined' ? localStorage.getItem('language') || 'ru' : 'ru';
 const coursesFromStorage = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('coursesList')) || [] : [];
 
-const initialState = {
-    user: {
-        language: languageFromStorage,
-        coursesList: [...coursesFromStorage]
-    },
-    isLoading: false,
-    error: null,
-}
+
 
 export const fetchUserCourses = createAsyncThunk(
     'courses/fetchCoursesByLanguage',
 
-    async (language = 'ru') => {
-
+    async () => {
         const userResponse = await strapiApi.get(`/api/users/2?populate=*`)
-        const userCoursesIds = userResponse.data.courses.map(course => course.id)
 
-        let userCourses;
-        await axios.all(userCoursesIds.map((id) => strapiApi.get(`/api/courses/${id}?populate=*`))).then(
-            (data) => userCourses = data,
+        const userProgramsIds = userResponse.data.courses.map(course => course.id)
+        let userPrograms;
+        await axios.all(userProgramsIds.map((id) => strapiApi.get(`/api/courses/${id}?populate=*`))).then(
+            (data) => userPrograms = data,
         );
 
-        return findObjectsByLanguage(userCourses, language);
+        const userWebinarsIds = userResponse.data.webbinarrs.map(webinar => webinar.id)
+        let userWebinars;
+        await axios.all(userWebinarsIds.map((id) => strapiApi.get(`/api/webbinarrs/${id}?populate=*`))).then(
+            (data) => userWebinars = data,
+        );
 
+
+        return {userPrograms, userWebinars}
     }
 )
 
+const initialState = {
+
+    user: {
+        language: languageFromStorage,
+        courses: {
+            programs: [],
+            webinars: [],
+        },
+    },
+    isLoading: false,
+    error: null,
+}
 
 const userSlice = createSlice({
     name: 'user',
@@ -57,11 +67,14 @@ const userSlice = createSlice({
         })
         builder.addCase(fetchUserCourses.fulfilled, (state, action) => {
             state.isLoading = false
-            console.log(action.payload)
-            state.user = {
-                language: languageFromStorage,
-                coursesList: action.payload
-            }
+
+            const programs = action.payload.userPrograms;
+            const webinars = action.payload.userWebinars;
+
+            state.user.courses.programs = programs;
+            state.user.courses.webinars = webinars;
+
+
 
         })
         builder.addCase(fetchUserCourses.rejected, (state, action) => {

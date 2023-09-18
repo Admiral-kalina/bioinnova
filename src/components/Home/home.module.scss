@@ -73,7 +73,7 @@
     background: transparent;
     max-height: 780px;
 
-    .gridCalendar {
+    .contentWrapper {
       overflow-y: scroll;
       max-height: 100%;
       border: solid 3px #515151;
@@ -101,6 +101,15 @@
         background-color: transparent;
         margin: 50px 0 0 0;
       }
+    }
+    .webinarsRow{
+      display: grid;
+      grid-template-columns:1fr 1fr ;
+      row-gap: 24px;
+      column-gap: 24px;
+    }
+    .programsRow{
+
     }
   }
 

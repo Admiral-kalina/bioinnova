@@ -263,3 +263,29 @@
     }
   }
 }
+
+
+
+// EVENT
+
+.rbc-row-content{
+  height: 100%;
+  .rbc-row:last-child{
+    height: 100%;
+  }
+
+  .rbc-row-segment{
+    height: 100%;
+  }
+  .rbc-event{
+    height: 100%;
+  }
+
+  .rbc-event-content{
+    height: 100%;
+  }
+
+  .event_element{
+    height: 100%;
+  }
+}
