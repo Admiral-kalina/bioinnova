@@ -13,10 +13,12 @@ const Index = ({pageContext}) => {
     return (
         <Protector>
             <Header/>
-            <Container>
-                <Home context={pageContext.nav}/>
-            </Container>
-           <Footer/>
+          <div style={{background: "#151515"}}>
+              <Container>
+                  <Home context={pageContext.nav}/>
+              </Container>
+          </div>
+           <Footer location='home'/>
         </Protector>
     );
 };

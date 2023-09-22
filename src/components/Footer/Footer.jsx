@@ -6,9 +6,10 @@ import icon6 from "../../images/icon/icon6.svg"
 import icon7 from "../../images/icon/icon7.svg"
 import icon8 from "../../images/icon/icon8.svg"
 
-const Footer = () => {
+const Footer = ({location}) => {
+
     return (
-        <footer className="footer">
+        <footer className={`footer ${location==='home'? 'footer_home' : ''}`}>
             <div className="container d-block-md">
                 <div className="footer__wrapper">
                     <div className="footer__contacts">

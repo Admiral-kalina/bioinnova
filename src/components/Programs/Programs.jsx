@@ -4,8 +4,8 @@ import Container from "../Container/Container";
 import * as styles from "./programs.module.scss"
 import arrowUpRight from "../../images/arrowUpRightSm.svg"
 import {Link} from "gatsby";
-import {ProgramOverview} from "./ProgramOverview";
-import {ProgramsList} from "./ProgramsList";
+import {ProgramOverview} from "./ProgramOverview/ProgramOverview";
+import {ProgramsList} from "./ProgramsList/ProgramsList";
 
 const mockPrograms = [
     {id: 1, keyName: 'program', section: 'Программа', name: 'фармаконадзор', date: '10.11.2023', webinarsCount: 3},

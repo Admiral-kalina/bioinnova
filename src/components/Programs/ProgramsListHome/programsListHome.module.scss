@@ -1,0 +1,14 @@
+.root{
+  .row{
+    padding-top: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 24px;
+    column-gap: 32px;
+    @media screen and (max-width: 768px){
+      padding-top: 64px;
+      grid-template-columns:  1fr;
+      align-self: center;
+    }
+  }
+}

@@ -1,12 +1,12 @@
 import React from "react";
-import Container from "../Container/Container";
+import Container from "../../Container/Container";
 import * as styles from "./programOverview.module.scss";
-import logo from "../../images/webinar/logo.png";
-import MyButton from "../UI/MyButton/MyButton";
-import {WebinarsList} from "../Webinars/WebinarList/WebinarsList";
-import MyCollapse from "../UI/MyCollapse/MyCollapse";
-import ContactForm from "../UI/ContactForm/ContactForm";
-import IndividualForm from "../UI/IndividualForm/IndividualForm";
+import logo from "../../../images/webinar/logo.png";
+import MyButton from "../../UI/MyButton/MyButton";
+import {WebinarsList} from "../../Webinars/WebinarList/WebinarsList";
+import MyCollapse from "../../UI/MyCollapse/MyCollapse";
+import ContactForm from "../../UI/ContactForm/ContactForm";
+import IndividualForm from "../../UI/IndividualForm/IndividualForm";
 import {Link} from "gatsby";
 
 const mockWebinars = [

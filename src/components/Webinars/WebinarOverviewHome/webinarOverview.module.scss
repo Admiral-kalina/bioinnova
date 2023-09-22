@@ -1,0 +1,215 @@
+.root {
+  max-height: 700px;
+  overflow: hidden;
+
+  .back {
+    margin-top: 24px;
+    height: 70px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: minmax(1fr, 880px) minmax(1fr, 1fr);
+    grid-template-areas: 'scrollable fixed';
+    //display: flex;
+    margin: 0 35px;
+    column-gap: 65px;
+    @media screen and (max-width: 1200px) {
+      column-gap: 30px;
+      margin: 0 20px;
+    }
+    @media screen and (max-width: 850px) {
+      grid-template-columns: 330px 1fr;
+      column-gap: 0;
+    }
+    @media screen and (max-width: 768px) {
+      grid-template-areas: 'scrollable' 'fixed';
+      grid-template-columns: 1fr;
+
+    }
+  }
+
+  .column {
+    height: 100%;
+  }
+
+  .scrollable {
+    max-width: 880px;
+    margin-top: 10px;
+    grid-area: scrollable;
+    background: #1D1D1D;
+    overflow-y: scroll;
+    max-height: 585px;
+    padding: 30px 16px 30px 40px;
+
+    &::-webkit-scrollbar {
+      flex-shrink: 0;
+      width: 34px;
+      background: #151515;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border: 12px solid rgba(0, 0, 0, 0);
+      background-clip: padding-box;
+      border-radius: 9999px;
+
+      background-color: rgba(217, 217, 217, 0.30);
+
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+
+    .section {
+      grid-area: section;
+      padding: 0;
+      font-size: 24px;
+      color: rgba(241, 240, 231, 0.40);
+      font-style: normal;
+      font-weight: 300;
+    }
+
+    .name {
+      grid-area: name;
+      max-width: 300px;
+      padding-top: 24px;
+      font-size: 32px;
+      text-transform: uppercase;
+    }
+
+    .text {
+      grid-area: text;
+      max-width: 782px;
+      padding-top: 24px;
+      font-size: 20px;
+    }
+
+
+    img {
+      grid-area: image;
+      padding-top: 40px;
+    }
+
+    .description {
+
+    }
+
+
+    @media screen and (max-width: 1200px) {
+      padding: 20px 16px 20px 20px;
+    }
+    @media screen and (max-width: 768px) {
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      max-height: 100%;
+
+      .section {
+        order: 1;
+      }
+
+      .name {
+        order:2 ;
+      }
+
+      .contentTop{
+        order: 3;
+      }
+
+
+      .text {
+        order:5 ;
+      }
+
+
+      img {
+        order: 4;
+      }
+
+      .description {
+        order: 6;
+      }
+    }
+  }
+
+  .fixed {
+    grid-area: fixed;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+
+
+    @media screen and (max-width: 768px) {
+      overflow: auto;
+    }
+  }
+
+  .date {
+    padding: 24px 0 0 0;
+    margin: 0 0 0 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+
+    &:before {
+      content: url("../../../images/calendar.svg");
+      position: relative;
+      top: 4.5px;
+      left: -12px;
+    }
+  }
+
+  .teacher {
+    margin: 0 0 0 10px;
+    padding: 24px 0 0 26px;
+    max-width: 250px;
+    font-size: 24px;
+    position: relative;
+
+    &:before {
+      content: url("../../../images/user.svg");
+      position: absolute;
+      top: 50%;
+      left: -12px;
+    }
+  }
+
+  .time {
+    padding: 24px 0 0 0;
+    margin: 0 0 0 10px;
+    font-size: 20px;
+
+    &:before {
+      content: url("../../../images/clock.svg");
+      position: relative;
+      top: 4.5px;
+      left: -12px;
+    }
+  }
+
+  .showOnPhone{
+    display: none;
+    @media screen and (max-width: 768px){
+      display: block;
+    }
+  }
+  .hideOnPhone{
+    display: block;
+    @media screen and (max-width: 768px){
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    max-height: 100%;
+    overflow: auto;
+  }
+
+}
+
+

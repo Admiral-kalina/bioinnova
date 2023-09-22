@@ -1,13 +1,14 @@
 import * as styles from "../webinars.module.scss";
-import {Link} from "gatsby";
-import React from "react";
 
-export const WebinarsList = ({webinars}) => {
-    console.log('WEBINAR',webinars)
+import React from "react";
+import {Link} from "gatsby";
+
+export const WebinarsList = ({webinars, isWebinarHome}) => {
+    console.log('PROGRAM', webinars)
     return (
         <>
             {webinars.map(webinar =>
-                <div className={styles.column}>
+                <div key={webinar.id} className={styles.column}>
                     <p className={styles.section}>{webinar.section} №{webinar.id}</p>
                     <p className={styles.name}>{webinar.name}</p>
                     <p className={styles.date}> {webinar.date}</p>
@@ -21,7 +22,5 @@ export const WebinarsList = ({webinars}) => {
                 </div>
             )}
         </>
-
-
     )
 }

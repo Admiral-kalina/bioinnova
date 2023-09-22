@@ -62,12 +62,18 @@
     font-weight: 300;
   }
 
+  .name{
+    font-size: 32px;
+    text-transform: uppercase;
+  }
+
   .title {
     font-size: 24px;
     text-transform: uppercase;
   }
 
   .date {
+    margin: 0 0 0 10px;
     font-size: 24px;
     text-transform: uppercase;
 
@@ -80,6 +86,7 @@
   }
 
   .teacher {
+    margin: 0 0 0 10px;
     padding: 24px 0 0 26px;
     max-width: 250px;
     font-size: 24px;
@@ -94,6 +101,8 @@
   }
 
   .time {
+    margin: 0 0 0 10px;
+    font-size: 20px;
     &:before {
       content: url("../../images/clock.svg");
       position: relative;
@@ -119,8 +128,17 @@
 
   @media screen and (max-width: 768px) {
     padding: 30px 25px 30px 25px;
+    p {
+      padding: 16px 0 0 0;
+    }
+    .name{
+      font-size: 24px;
+
+    }
+
     .date {
-      font-size: 16px;
+      font-size: 20px;
+
 
       &:before {
         content: url("../../images/calendar.svg");
@@ -130,7 +148,22 @@
       }
     }
     .teacher {
-      font-size: 16px;
+      font-size: 20px;
+      padding: 16px 0 0 26px;
+
+    }
+  }
+}
+
+.columnHome{
+  padding: 37px 40px 53px 40px;
+  a{
+    margin: 80px 0 0;
+  }
+  @media screen and (max-width: 768px){
+    padding: 30px 25px 30px 30px;
+    a{
+      margin: 40px 0 0;
     }
   }
 }

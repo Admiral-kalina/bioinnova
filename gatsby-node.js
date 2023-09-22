@@ -60,8 +60,11 @@ const mockWebinars = [
 exports.createPages = async ({actions: {createPage}}) => {
 
     const programs = await getData('courses?populate=*')
+    const webinars = await getData('webbinarrs?populate=*')
 
     console.log('PR1',programs)
+
+     console.log('PR2',webinars)
 
     createPage({
         path: `/home`,
@@ -69,6 +72,7 @@ exports.createPages = async ({actions: {createPage}}) => {
         component: require.resolve('./src/pages/home/index.js'),
         context: {a: 'some context'}
     });
+
     homeNavs.map(nav => {
         createPage({
             path: `/home/${nav.path}`,
@@ -77,11 +81,38 @@ exports.createPages = async ({actions: {createPage}}) => {
         });
     });
 
-    createPage({
-        path: `services/programs/`,
-        component: require.resolve('./src/pages/programs'),
-        context: {key:'program'}
-    });
+    programs.map(program => {
+        createPage({
+            path: `home/programs/program`,
+            component: require.resolve('./src/pages/home/index.js'),
+            context: {key:'programHomeElement',program}
+        });
+    })
+
+    programs.map(program => {
+        createPage({
+            path: `home/programs/program${program.id}`,
+            component: require.resolve('./src/pages/programs/index.js'),
+            context: {key:'programElement',program}
+        });
+    })
+
+    programs.map(program => {
+        createPage({
+            path: `home/programs/program/webinar/`,
+            component: require.resolve('./src/pages/home/index.js'),
+            context: {key:'programElement',program}
+        });
+    })
+
+    programs.map(program => {
+        createPage({
+            path: `home/webinars/webinar`,
+            component: require.resolve('./src/pages/home/index.js'),
+            context: {key:'programElement',program}
+        });
+    })
+
 
     programs.map(program => {
         createPage({
@@ -90,6 +121,14 @@ exports.createPages = async ({actions: {createPage}}) => {
             context: {key:'programElement',program}
         });
     })
+
+
+    createPage({
+        path: `services/programs/`,
+        component: require.resolve('./src/pages/programs'),
+        context: {key:'program'}
+    });
+
 
 
     createPage({
